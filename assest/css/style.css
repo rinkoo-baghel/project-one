@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;700;900&display=swap');
+/*
+https://bennettfeely.com/clippy/
+*/
+
+:root{
+    --blue:#00b8b8;
+    --back:#000000;
+    --white:#ffffff;
+    --bg:#eee;
+    --border:.2rem solid rgba(0,0,0,.1);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0.1);
+}
+
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+}
+.row>* {
+    flex-shrink: 0;
+    width: inherit;
+    max-width: 100%;
+}
+
+.link-btn{
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: .5rem;
+    background-color: var(--blue);
+    cursor: pointer;
+    font-size: 1.7rem;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.link-btn:hover{
+    background-color: var(--back);
+}
+
+.header{
+    padding: 2rem;
+    border-bottom: var(--border);
+}
+
+.header .logo{
+    font-size:2rem;
+    color: var(--back);
+    text-decoration: none;
+}
+
+.header .logo span{
+    color: var(--blue);
+}
+
+.header .nav a{
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--back);
+    text-decoration: none;
+}
+
+.header .nav a:hover{
+color: var(--back);
+font-weight: 500;
+}
+
+#menu-btn{
+    font-size: 2.5rem;
+    color: var(--back);
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+
+/* media query */
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+
+    .header .link-btn{
+        display: none;
+    }
+}
+
+
+/* media query */
+
+@media (max-width:768px){
+    #menu-btn{
+       display: inline-block;
+       transition: .2s linear;
+    }
+
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+    }
+
+
+    .header .nav{
+        position: absolute;
+        top: 99%;
+        left: 0; right: 0;
+        background-color: var(--white);
+        border-top: var(--border);
+        border-bottom: var(--border);
+        padding: 1rem 0;
+        text-align: center;
+        flex-flow: column;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .header .nav.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .nav a{
+        margin: 1rem 0;
+        font-size: 2rem;
+    }
+}
+
+
+
+/* media query */
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
+
+/* counter */
+
+.counter-wrap {
+    margin-top: 250px;
+}
